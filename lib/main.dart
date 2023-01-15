@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -60,7 +61,13 @@ class _HomeState extends State<Home> {
   Future<void> _incrementCounter() async {
     String adres = "https://api.btcturk.com/api/v2/ticker";
 
-    final response = await http.get(Uri.parse(adres));
+    final response = await http.get(
+      Uri.parse(adres),
+      headers: {
+        HttpHeaders.contentTypeHeader: "application/json",
+        HttpHeaders.acceptHeader: "application/json"
+      },
+    );
     setState(() {});
     if (response.statusCode == 200) {
       Map gelenJson = jsonDecode(response.body);
@@ -88,7 +95,7 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.amber,
           centerTitle: true,
           title: Text(
-            'İzzet Baba Sen Çok Yaşa!',
+            'İzzet Bank',
             style: TextStyle(
               color: Colors.grey[900],
               fontSize: 20,
