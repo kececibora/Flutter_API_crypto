@@ -64,10 +64,11 @@ class _HomeState extends State<Home> {
     final response = await http.get(
       Uri.parse(adres),
       headers: {
-        HttpHeaders.contentTypeHeader: "application/json",
-        HttpHeaders.acceptHeader: "application/json"
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
       },
     );
+
     setState(() {});
     if (response.statusCode == 200) {
       Map gelenJson = jsonDecode(response.body);

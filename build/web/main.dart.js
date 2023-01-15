@@ -31526,7 +31526,7 @@ lj(){var s=0,r=A.a4(t.H),q=this,p,o
 var $async$lj=A.a5(function(a,b){if(a===1)return A.a1(b,r)
 while(true)switch(s){case 0:p=t.N
 s=2
-return A.ag(A.abs(A.o0("https://api.btcturk.com/api/v2/ticker"),A.aL(["content-type","application/json","accept","application/json"],p,p)),$async$lj)
+return A.ag(A.abs(A.o0("https://api.btcturk.com/api/v2/ticker"),A.aL(["Access-Control-Allow-Origin","*","Access-Control-Allow-Methods","GET"],p,p)),$async$lj)
 case 2:o=b
 q.aj(new A.a02())
 if(o.b===200)q.d=A.alK(B.aI.E2(0,A.abl(A.aas(o.e).c.a.j(0,"charset")).cB(0,o.w),null))
