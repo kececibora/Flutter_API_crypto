@@ -3,7 +3,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 
 import 'coinCard.dart';
 import 'coinModel.dart';
@@ -61,7 +60,7 @@ class _HomeState extends State<Home> {
   Future<void> _incrementCounter() async {
     String adres = "https://api.btcturk.com/api/v2/ticker";
 
-    Response response = await get(Uri.parse(adres));
+    final response = await http.get(Uri.parse(adres));
     setState(() {});
     if (response.statusCode == 200) {
       Map gelenJson = jsonDecode(response.body);
